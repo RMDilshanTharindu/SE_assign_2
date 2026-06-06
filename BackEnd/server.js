@@ -14,6 +14,7 @@ const authRoutes = require("./routes/authRoutes");
 const resourceRoutes = require("./routes/resourceRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
 const eventRoutes = require("./routes/eventRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 // Middleware
 app.use(cors());
@@ -27,6 +28,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/resources", resourceRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/events", eventRoutes);
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 
