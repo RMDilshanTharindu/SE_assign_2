@@ -11,6 +11,7 @@ connectDB();
 
 const app = express();
 const authRoutes = require("./routes/authRoutes");
+const resourceRoutes = require("./routes/resourceRoutes");
 
 // Middleware
 app.use(cors());
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/resources", resourceRoutes);
 
 const PORT = process.env.PORT || 5000;
 
