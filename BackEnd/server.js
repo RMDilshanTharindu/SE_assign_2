@@ -16,6 +16,11 @@ const bookingRoutes = require("./routes/bookingRoutes");
 const eventRoutes = require("./routes/eventRoutes");
 const userRoutes = require("./routes/userRoutes");
 
+const swaggerUi = require("swagger-ui-express");
+const YAML = require("yamljs");
+
+const swaggerDocument = YAML.load("./swagger.yaml");
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -29,6 +34,7 @@ app.use("/api/resources", resourceRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api-docs",swaggerUi.serve,swaggerUi.setup(swaggerDocument));
 
 const PORT = process.env.PORT || 5000;
 
