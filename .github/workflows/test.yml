@@ -14,7 +14,6 @@ jobs:
       matrix:
         node-version: [18.x, 20.x]
 
-    # Tells GitHub Actions to run all commands inside the BackEnd directory
     defaults:
       run:
         working-directory: ./BackEnd
@@ -34,15 +33,16 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        # FIX: Point this to the exact subfolder location where package-lock.json lives
         cache-dependency-path: './BackEnd/package-lock.json'
 
     - name: Install dependencies
       run: npm ci
 
     - name: Run Integration Tests
-      run: npm test
+      # Added --forceExit to prevent asynchronous open handles from blocking Node 18 runners
+      run: npm test -- --forceExit
       env:
-        MONGO_URI: mongodb://localhost:27017/campus_test_db
+        # FIX: Changed 'localhost' to the explicit IPv4 '127.0.0.1' address
+        MONGO_URI: mongodb://127.0.0.1:27017/campus_test_db
         JWT_SECRET: supersecretgithubactionsvalidationkey123
         NODE_ENV: test
