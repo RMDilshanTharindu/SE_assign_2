@@ -14,7 +14,11 @@ jobs:
       matrix:
         node-version: [18.x, 20.x]
 
-    # Spin up a containerized MongoDB instance alongside the environment
+    # Tells GitHub Actions to run all commands inside the BackEnd directory
+    defaults:
+      run:
+        working-directory: ./BackEnd
+
     services:
       mongodb:
         image: mongo:6.0
@@ -30,6 +34,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        # FIX: Point this to the exact subfolder location where package-lock.json lives
+        cache-dependency-path: './BackEnd/package-lock.json'
 
     - name: Install dependencies
       run: npm ci
