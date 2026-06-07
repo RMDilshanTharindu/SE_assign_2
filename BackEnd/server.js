@@ -38,6 +38,12 @@ app.use("/api-docs",swaggerUi.serve,swaggerUi.setup(swaggerDocument));
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// CHANGE THIS PART: Only listen to the port if the file is run directly
+if (process.env.NODE_ENV !== "test") {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+// ADD THIS LINE: Export app so Supertest can use it without fighting over ports
+module.exports = app;
