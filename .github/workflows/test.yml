@@ -39,10 +39,10 @@ jobs:
       run: npm ci
 
     - name: Run Integration Tests
-      # Added --forceExit to prevent asynchronous open handles from blocking Node 18 runners
+      # FIX: Added NODE_OPTIONS flag to expose the crypto module globally for Node 18 runners
       run: npm test -- --forceExit
       env:
-        # FIX: Changed 'localhost' to the explicit IPv4 '127.0.0.1' address
         MONGO_URI: mongodb://127.0.0.1:27017/campus_test_db
         JWT_SECRET: supersecretgithubactionsvalidationkey123
         NODE_ENV: test
+        NODE_OPTIONS: "--experimental-global-webcrypto"
