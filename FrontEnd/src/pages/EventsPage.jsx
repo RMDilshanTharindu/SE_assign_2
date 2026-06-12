@@ -49,7 +49,11 @@ export const EventsPage = ({ token, role }) => {
       {msg && <div className="alert alert-success">{msg}</div>}
       <div className="flex-between mb-16">
         <div/>
-        <button className="btn btn-primary" onClick={openCreate}><Icon name="plus" size={14}/> Publish Event</button>
+        {role === 'admin' && (
+          <button className="btn btn-primary" onClick={openCreate}>
+            <Icon name="plus" size={14}/> Publish Event
+          </button>
+        )}
       </div>
       {modal && (
         <div className="modal-backdrop" onClick={e => e.target === e.currentTarget && setModal(false)}>
