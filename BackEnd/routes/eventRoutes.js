@@ -15,21 +15,23 @@ const router = express.Router();
 // Everyone can view events
 router.get("/", getEvents);
 
-// Admin only
+
 router.post(
   "/",
   protect,
-  authorizeRoles("admin"),
+  authorizeRoles("admin","student","resource_manager"),
   createEvent
 );
+
 
 router.put(
   "/:id",
   protect,
-  authorizeRoles("admin"),
+  authorizeRoles("admin","student","resource_manager"),
   updateEvent
 );
 
+//// Admin only
 router.delete(
   "/:id",
   protect,
