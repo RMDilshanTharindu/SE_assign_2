@@ -1,93 +1,107 @@
-Campus Resource Management System (CampusRMS)
+# Campus Resource Management System (CampusRMS)
 
-Overview
+## Overview
 
-Campus Resource Management System (CampusRMS) is a web-based application developed to manage campus resources, events, and booking requests efficiently. The system provides separate functionalities for administrators, resource managers, and students to streamline resource allocation and approval processes within a university environment.
+The **Campus Resource Management System (CampusRMS)** is a web-based application designed to efficiently manage campus resources, events, and booking requests. The system provides role-based access for administrators, resource managers, and students, enabling a streamlined and transparent resource allocation process within a university environment.
 
-Purpose of the Application
+---
 
-The primary purpose of this application is to digitize and automate the management of campus resources and event bookings. Instead of using manual processes, users can submit requests, manage resources, publish events, and approve bookings through a centralized platform.
+## Purpose of the Application
 
-The system aims to:
+The primary objective of CampusRMS is to digitize and automate the management of campus resources and event bookings. By replacing manual procedures with an integrated online platform, the system enhances operational efficiency, improves communication, and simplifies resource management.
 
-    Improve resource utilization.
-    Reduce manual paperwork and administrative effort.
-    Provide a transparent booking and approval process.
-    Allow students to request campus resources conveniently.
-    Enable administrators and resource managers to manage resources effectively.
+### Key Objectives
 
-Main Features
+* Improve campus resource utilization.
+* Reduce administrative workload and paperwork.
+* Provide a transparent booking and approval workflow.
+* Enable students to request resources conveniently.
+* Support administrators and resource managers in effective resource management.
 
-    Student Functions
+---
 
-        View available campus resources.
-        Submit resource booking requests.
-        Track booking status and approvals.
-        View campus events and announcements.
+## Main Features
 
-    Resource Manager Functions
+### Student Functions
 
-        Add new resources.
-        Update resource information.
-        Manage resource availability.
-        Review booking requests.
+* View available campus resources.
+* Submit resource booking requests.
+* Track booking status and approval progress.
+* View campus events and announcements.
 
-    Administrator Functions
+### Resource Manager Functions
 
-        Manage users and system access.
-        Publish and manage campus events.
-        Approve or reject booking requests.
-        Monitor overall system activities.
+* Add new resources.
+* Update resource information.
+* Manage resource availability.
+* Review resource booking requests.
 
-Technologies Used
+### Administrator Functions
 
-    Frontend
+* Manage users and system access.
+* Publish and manage campus events.
+* Approve or reject booking requests.
+* Monitor overall system activities.
 
-        React.js
-        Vite
-        JavaScript
-        CSS
+---
 
-    Backend
+## Technologies Used
 
-        Node.js
-        Express.js
+### Frontend
 
-    Database
+* React.js
+* Vite
+* JavaScript
+* CSS
 
-        MongoDB
-        Mongoose
+### Backend
 
-    Additional Tools
+* Node.js
+* Express.js
 
-        JWT Authentication
-        Swagger API Documentation
+### Database
 
-System Workflow
+* MongoDB
+* Mongoose
 
-    Users log in to the system according to their roles.
-    Students submit resource booking requests.
-    Resource managers review resource availability.
-    Administrators approve or reject requests.
-    Approved resources become reserved for the specified period.
-    Events can be published and viewed by users through the platform.
+### Additional Tools
 
-Function Review and Testing Recordings
+* JWT Authentication
+* Swagger API Documentation
 
-1. Checking Functions of the System
+---
 
-  This recording demonstrates the testing and verification of the system functions, including event management, resource management, and user interactions.
-  
-    Video Link:
-    https://drive.google.com/file/d/11I6KSPVHVCqVvmNhic_bRV3xIUDDdhuz/view?usp=sharing
+## System Workflow
 
-2. Booking Approval of a Student
+1. Users log in according to their assigned roles.
+2. Students submit resource booking requests.
+3. Resource managers review resource availability.
+4. Administrators approve or reject requests.
+5. Approved resources are reserved for the requested period.
+6. Campus events are published and made available to users.
 
-  This recording demonstrates the complete workflow of a student's booking request and the approval process performed by authorized users.
-  
-    Video Link:
-    https://drive.google.com/file/d/1HHO9tlYEVYWlfdOyJYXUBpYIqDlySwjN/view?usp=sharing
+---
 
-Conclusion
+## Function Review and Testing Recordings
 
-CampusRMS provides an efficient and user-friendly solution for managing campus resources, events, and booking approvals. By automating resource allocation and approval workflows, the system improves operational efficiency, enhances transparency, and offers a better experience for students and staff.
+### 1. System Functionality Testing
+
+This recording demonstrates the testing and verification of key system functionalities, including event management, resource management, and user interactions.
+
+**Video Link:**
+https://drive.google.com/file/d/11I6KSPVHVCqVvmNhic_bRV3xIUDDdhuz/view?usp=sharing
+
+---
+
+### 2. Student Booking Approval Workflow
+
+This recording demonstrates the complete workflow of a student booking request and the approval process performed by authorized users.
+
+**Video Link:**
+https://drive.google.com/file/d/1HHO9tlYEVYWlfdOyJYXUBpYIqDlySwjN/view?usp=sharing
+
+---
+
+## Conclusion
+
+The **Campus Resource Management System (CampusRMS)** provides an efficient, secure, and user-friendly platform for managing campus resources, events, and booking approvals. By automating resource allocation and approval workflows, the system improves operational efficiency, increases transparency, and enhances the overall experience for students, resource managers, and administrators.
