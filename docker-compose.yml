@@ -1,0 +1,30 @@
+services:
+  # MongoDB Database service
+  database:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  # Node.js Backend service
+  backend:
+    build: ./BackEnd
+    ports:
+      - "5000:5000"
+    depends_on:
+      - database
+    environment:
+      - MONGO_URI=mongodb://database:27017/campusrms
+      - JWT_SECRET=your_secret_key # Use your actual JWT secret here
+
+  # React Frontend service
+  frontend:
+    build: ./FrontEnd
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
